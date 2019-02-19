@@ -1,0 +1,33 @@
+{
+  "name": "population-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "chai": "^4.2.0",
+    "chance": "^1.0.18",
+    "express": "^4.16.4",
+    "joi": "^14.3.1",
+    "mocha": "^6.0.0",
+    "nodemon": "^1.18.10",
+    "sequelize": "^4.42.0",
+    "sequelize-cli": "^5.4.0",
+    "sqlite3": "^4.0.6",
+    "supertest": "^3.4.2"
+  },
+  "scripts": {
+    "migrate": "sequelize db:migrate",
+    "migrate:undo": "sequelize db:migrate:undo:all",
+    "start:dev": "nodemon server.js",
+    "pretest": "NODE_ENV=test npm run migrate:undo && NODE_ENV=test npm run migrate",
+    "test": "NODE_ENV=test mocha"
+  },
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0"
+  }
+}
